@@ -205,7 +205,26 @@ public class MainActivity extends AppCompatActivity {
                             (gameBoard[1][3] == NOUGHT && gameBoard[2][3] == NOUGHT) ||
                             (gameBoard[3][1] == NOUGHT && gameBoard[3][2] == NOUGHT))) {
                 markSquare(3, 3);
-            } else
+            }  else if (gameBoard[1][3] == NOUGHT && gameBoard[3][2] == NOUGHT) {
+                markSquare(3, 3);
+            } else if (gameBoard[1][1] == NOUGHT && gameBoard[3][2] == NOUGHT) {
+                markSquare(3, 1);
+            } else if (gameBoard[1][1] == NOUGHT && gameBoard[2][3] == NOUGHT) {
+                markSquare(1, 3);
+            } else if (gameBoard[2][3] == NOUGHT && gameBoard[3][1] == NOUGHT) {
+                markSquare(3, 3);
+            } else if (gameBoard[1][2] == NOUGHT && gameBoard[3][3] == NOUGHT) {
+                markSquare(1, 3);
+            } else if (gameBoard[1][2] == NOUGHT && gameBoard[3][1] == NOUGHT) {
+                markSquare(1, 1);
+            } else if (gameBoard[2][1] == NOUGHT && gameBoard[3][3] == NOUGHT) {
+                markSquare(3, 1);
+            } else if (gameBoard[1][3] == NOUGHT && gameBoard[2][1] == NOUGHT) {
+                markSquare(1, 1);
+            }
+
+
+            else
                 return false;
 
             return true;
@@ -289,7 +308,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         }
-
 
         private void markSquare(int x, int y) {
             squares[x][y].setEnabled(false);
