@@ -140,7 +140,10 @@ public class MainActivity extends AppCompatActivity {
 
     private class ComputerPlayer {
         public void takeTurn() {
-            if (blockPlayerWin()) {
+            if (gameBoard[2][2] == EMPTY) {
+                markSquare(2, 2);
+            }
+            else if (blockPlayerWin()) {
                 return;
             } else if(canComputerWin()){
                 return;
