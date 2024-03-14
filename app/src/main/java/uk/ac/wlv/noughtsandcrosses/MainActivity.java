@@ -226,7 +226,6 @@ public class MainActivity extends AppCompatActivity {
             }else if (gameBoard[1][1] == NOUGHT && gameBoard[3][3] == NOUGHT) {
                 markSquare(3, 2);
             }
-
             else
                 return false;
 
@@ -306,7 +305,6 @@ public class MainActivity extends AppCompatActivity {
                 markSquare(3,3);
                 return true;
             }
-
             else {
                 return false;
             }
