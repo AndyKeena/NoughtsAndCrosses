@@ -143,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
             if (gameBoard[2][2] == EMPTY) {
                 markSquare(2, 2);
             }
+            else if ((gameBoard[2][2] == NOUGHT) && (gameBoard[1][1] == EMPTY ) && (gameBoard[1][2] == EMPTY) && (gameBoard[1][3] == EMPTY) && (gameBoard[2][1] == EMPTY) && (gameBoard[2][3] == EMPTY) && (gameBoard[3][3] == EMPTY) && (gameBoard[3][2] == EMPTY)){
+                markSquare(3, 1);
+                return;
+            }
             else if (canComputerWin()) {
                 return;
             } else if(blockPlayerWin()){
@@ -205,26 +209,29 @@ public class MainActivity extends AppCompatActivity {
                             (gameBoard[1][3] == NOUGHT && gameBoard[2][3] == NOUGHT) ||
                             (gameBoard[3][1] == NOUGHT && gameBoard[3][2] == NOUGHT))) {
                 markSquare(3, 3);
-            }  else if (gameBoard[1][3] == NOUGHT && gameBoard[3][2] == NOUGHT) {
+            }  else if (gameBoard[3][3] == EMPTY && gameBoard[1][3] == NOUGHT && gameBoard[3][2] == NOUGHT) {
                 markSquare(3, 3);
-            } else if (gameBoard[1][1] == NOUGHT && gameBoard[3][2] == NOUGHT) {
+            } else if (gameBoard[3][1] == EMPTY && gameBoard[1][1] == NOUGHT && gameBoard[3][2] == NOUGHT) {
                 markSquare(3, 1);
-            } else if (gameBoard[1][1] == NOUGHT && gameBoard[2][3] == NOUGHT) {
+            } else if (gameBoard[1][3] == EMPTY && gameBoard[1][1] == NOUGHT && gameBoard[2][3] == NOUGHT) {
                 markSquare(1, 3);
-            } else if (gameBoard[2][3] == NOUGHT && gameBoard[3][1] == NOUGHT) {
+            } else if (gameBoard[3][3] == EMPTY && gameBoard[2][3] == NOUGHT && gameBoard[3][1] == NOUGHT) {
                 markSquare(3, 3);
-            } else if (gameBoard[1][2] == NOUGHT && gameBoard[3][3] == NOUGHT) {
+            } else if (gameBoard[1][3] == EMPTY && gameBoard[1][2] == NOUGHT && gameBoard[3][3] == NOUGHT) {
                 markSquare(1, 3);
-            } else if (gameBoard[1][2] == NOUGHT && gameBoard[3][1] == NOUGHT) {
+            } else if (gameBoard[1][1] == EMPTY && gameBoard[1][2] == NOUGHT && gameBoard[3][1] == NOUGHT) {
                 markSquare(1, 1);
-            } else if (gameBoard[2][1] == NOUGHT && gameBoard[3][3] == NOUGHT) {
+            } else if (gameBoard[3][1] == EMPTY && gameBoard[2][1] == NOUGHT && gameBoard[3][3] == NOUGHT) {
                 markSquare(3, 1);
-            } else if (gameBoard[1][3] == NOUGHT && gameBoard[2][1] == NOUGHT) {
+            } else if (gameBoard[1][1] == EMPTY && gameBoard[1][3] == NOUGHT && gameBoard[2][1] == NOUGHT) {
                 markSquare(1, 1);
-            }else if (gameBoard[1][3] == NOUGHT && gameBoard[3][1] == NOUGHT) {
+            }else if (gameBoard[3][2] == EMPTY && gameBoard[1][3] == NOUGHT && gameBoard[3][1] == NOUGHT) {
                 markSquare(3, 2);
-            }else if (gameBoard[1][1] == NOUGHT && gameBoard[3][3] == NOUGHT) {
+            }else if (gameBoard[3][2] == EMPTY && gameBoard[1][1] == NOUGHT && gameBoard[3][3] == NOUGHT) {
                 markSquare(3, 2);
+            }
+            else if (gameBoard[3][3] == EMPTY && gameBoard[2][2] == NOUGHT && gameBoard[1][3] == NOUGHT ){
+                markSquare(3, 3);
             }
             else
                 return false;
@@ -305,6 +312,7 @@ public class MainActivity extends AppCompatActivity {
                 markSquare(3,3);
                 return true;
             }
+
             else {
                 return false;
             }
