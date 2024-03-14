@@ -143,9 +143,9 @@ public class MainActivity extends AppCompatActivity {
             if (gameBoard[2][2] == EMPTY) {
                 markSquare(2, 2);
             }
-            else if (blockPlayerWin()) {
+            else if (canComputerWin()) {
                 return;
-            } else if(canComputerWin()){
+            } else if(blockPlayerWin()){
                 return;
             } else {
                 // Otherwise just pick a random square
@@ -221,8 +221,11 @@ public class MainActivity extends AppCompatActivity {
                 markSquare(3, 1);
             } else if (gameBoard[1][3] == NOUGHT && gameBoard[2][1] == NOUGHT) {
                 markSquare(1, 1);
+            }else if (gameBoard[1][3] == NOUGHT && gameBoard[3][1] == NOUGHT) {
+                markSquare(3, 2);
+            }else if (gameBoard[1][1] == NOUGHT && gameBoard[3][3] == NOUGHT) {
+                markSquare(3, 2);
             }
-
 
             else
                 return false;
