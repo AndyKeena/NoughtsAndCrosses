@@ -238,6 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         }
+
         private boolean canComputerWin() { //24
             if(gameBoard[1][1]==EMPTY && gameBoard[1][2] == CROSS && gameBoard[1][3] == CROSS) {
                 markSquare(1,1);
